@@ -105,6 +105,64 @@ document.head.appendChild(estilo);
 
 // ✅ Inicializa os campos de busca após o DOM carregar
 document.addEventListener("DOMContentLoaded", () => {
-  configurarBuscaTabela("busca-apoios", 0, "mensagem-apoios");
-  configurarBuscaTabela("busca-sistemas", 1, "mensagem-sistemas");
+  // Se ainda usar tabelas, mantenha essas chamadas:
+  // configurarBuscaTabela("busca-apoios", 0, "mensagem-apoios");
+  // configurarBuscaTabela("busca-sistemas", 1, "mensagem-sistemas");
+
+  // ✅ Busca em títulos (h1) de Apoios
+  configurarBuscaTitulos("busca-apoios", "#campos-web-content", "mensagem-apoios");
+});
+
+// ✅ Função de busca para títulos <h1> com links (ex: Apoios ou Sistemas)
+function configurarBuscaTitulos(inputId, containerSelector, mensagemId) {
+  const input = document.getElementById(inputId);
+  const container = document.querySelector(containerSelector);
+  const mensagem = document.getElementById(mensagemId);
+
+  if (!input || !container || !mensagem) return;
+
+  input.addEventListener("input", () => {
+    const termo = input.value.toLowerCase();
+    const titulos = container.querySelectorAll("h1");
+    let encontrou = false;
+
+    titulos.forEach(titulo => {
+      const texto = titulo.textContent.toLowerCase();
+      const corresponde = texto.includes(termo);
+      titulo.style.display = corresponde ? "block" : "none";
+      if (corresponde) encontrou = true;
+    });
+
+    mensagem.style.display = encontrou ? "none" : "block";
+  });
+}
+
+// ✅ Função de busca para títulos <h1> com links (ex: Apoios ou Sistemas)
+function configurarBuscaTitulos(inputId, containerSelector, mensagemId) {
+  const input = document.getElementById(inputId);
+  const container = document.querySelector(containerSelector);
+  const mensagem = document.getElementById(mensagemId);
+
+  if (!input || !container || !mensagem) return;
+
+  input.addEventListener("input", () => {
+    const termo = input.value.toLowerCase();
+    const titulos = container.querySelectorAll("h1");
+    let encontrou = false;
+
+    titulos.forEach(titulo => {
+      const texto = titulo.textContent.toLowerCase();
+      const corresponde = texto.includes(termo);
+      titulo.style.display = corresponde ? "block" : "none";
+      if (corresponde) encontrou = true;
+    });
+
+    mensagem.style.display = encontrou ? "none" : "block";
+  });
+}
+
+// ✅ Inicializa os campos de busca após o DOM carregar
+document.addEventListener("DOMContentLoaded", () => {
+  configurarBuscaTitulos("busca-apoios", "#campos-web-content", "mensagem-apoios");
+  configurarBuscaTitulos("busca-sistemas", "#ws-sigs-content", "mensagem-sistemas");
 });
