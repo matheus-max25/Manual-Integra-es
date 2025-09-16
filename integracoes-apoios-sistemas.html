@@ -50,6 +50,9 @@
 
         <!-- TABELA APOIOS -->
         <h2>Apoios</h2>
+        <input type="text" id="busca-apoios" placeholder="Pesquisar Apoios..." style="width: 100%; max-width: 500px; margin: 10px 0; display: block; padding: 8px;" />
+<div class="mensagem-nao-encontrado" id="mensagem-apoios" style="display:none; text-align: center; color: red;">Nenhuma informação encontrada.</div>
+
         <table style="width: 100%; max-width: 1000px; margin: 20px auto; border-collapse: collapse; table-layout: fixed;">
           <thead>
             <tr>
@@ -69,8 +72,8 @@
             <tr><td>Base Cientifica</td><td>XML</td></tr>
             <tr><td>Brasil Apoio</td><td>WebService</td></tr>
             <tr><td>CDA</td><td>WebService</td></tr>
-            <tr><td>Cedro</td><td>WebSerice</td></tr>
-            <tr><td>CSV</td><td>WebSerice</td></tr>
+            <tr><td>Cedro</td><td>WebService</td></tr>
+            <tr><td>CSV</td><td>WebService</td></tr>
             <tr><td>DB</td><td>WebService e XML</td></tr>
             <tr><td>Esmeralda</td><td>XML</td></tr>
             <tr><td>Eva</td><td>WebService</td></tr>
@@ -96,6 +99,9 @@
 
                 <!-- TABELA SISTEMAS -->
         <h2>Sistemas</h2>
+        <input type="text" id="busca-sistemas" placeholder="Pesquisar Sistemas..." style="width: 100%; max-width: 500px; margin: 10px 0; display: block; padding: 8px;" />
+<div class="mensagem-nao-encontrado" id="mensagem-sistemas" style="display:none; text-align: center; color: red;">Nenhuma informação encontrada.</div>
+
         <table style="width: 100%; max-width: 1000px; margin: 20px auto; border-collapse: collapse; table-layout: fixed;">
           <thead>
             <tr>
@@ -123,7 +129,7 @@
             <tr><td>MedAlise</td><td>arquivo TXT</td><td>Fica na aba Integrações</td></tr>
             <tr><td>DialSist</td><td>arquivo TXT</td><td>Fica na aba Integrações</td></tr>
             <tr><td>Datahealth</td><td>Via FTP</td><td></td></tr>
-            <tr><td>Feegow</td><td>WebSerice</td><td></td></tr>
+            <tr><td>Feegow</td><td>WebService</td><td></td></tr>
             <tr><td>Clinux</td><td>XML(WS-Sigs)</td><td></td></tr>
             <tr><td>Focus</td><td>XML(WS-Sigs)</td><td></td></tr>
             <tr><td>Sara</td><td>XML(WS-Sigs)</td><td></td></tr>
@@ -132,19 +138,19 @@
             <tr><td>Biodata</td><td>XML(WS-Sigs)</td><td></td></tr>
             <tr><td>Systema</td><td>XML(WS-Sigs)</td><td></td></tr>
             <tr><td>Tasy</td><td>XML(WS-Sigs)</td><td></td></tr>
-            <tr><td>MV Soul</td><td>WebSerice</td><td>Responsável Carlos Jardim - ConectBit</td></tr>
-            <tr><td>MV-2000</td><td>WebSerice</td><td>Responsável Carlos Jardim - ConectBit</td></tr>
+            <tr><td>MV Soul</td><td>WebService</td><td>Responsável Carlos Jardim - ConectBit</td></tr>
+            <tr><td>MV-2000</td><td>WebService</td><td>Responsável Carlos Jardim - ConectBit</td></tr>
             <tr><td>Syslab</td><td>XML(WS-Sigs)</td><td></td></tr>
-            <tr><td>STG</td><td>WebSerice</td><td></td></tr>
+            <tr><td>STG</td><td>WebService</td><td></td></tr>
             <tr><td>IDS Saúde/Maestro</td><td>WebSerice</td><td></td></tr>
-            <tr><td>IPM</td><td>WebSerice</td><td></td></tr>
-            <tr><td>BossMed</td><td>WebSerice</td><td></td></tr>
+            <tr><td>IPM</td><td>WebService</td><td></td></tr>
+            <tr><td>BossMed</td><td>WebService</td><td></td></tr>
             <tr><td>Sline-Certificação Digital</td><td>integrador WS-Sline</td><td></td></tr>
-            <tr><td>Sline - Financeiro</td><td>WebSerice</td><td>Faturamento Unimed</td></tr>
-            <tr><td>Orizon</td><td>WebSerice</td><td>Faturamento convênio Orizon</td></tr>
-            <tr><td>IPM</td><td>WebSerice</td><td></td></tr>
+            <tr><td>Sline - Financeiro</td><td>WebService</td><td>Faturamento Unimed</td></tr>
+            <tr><td>Orizon</td><td>WebService</td><td>Faturamento convênio Orizon</td></tr>
+            <tr><td>IPM</td><td>WebService</td><td></td></tr>
             <tr><td>Siscan</td><td>arquivo TXT</td><td>Fica na aba Integrações</td></tr>
-            <tr><td>Sistema SPDATA</td><td>WebSerice (Padrão SPDATA)</td><td></td></tr>
+            <tr><td>Sistema SPDATA</td><td>WebService (Padrão SPDATA)</td><td></td></tr>
             <tr><td>Friorilli Sistemas</td><td>arquivo TXT</td><td>Fica na aba Integrações</td></tr>
             <tr><td>IPE/IP WIN</td><td>arquivo TXT / PDF</td><td>Fica na aba Integrações - Faturamento</td></tr>
             <tr><td>BPA - SUS</td><td>arquivo TXT</td><td>Fica na aba Integrações</td></tr>
@@ -156,7 +162,7 @@
             <tr><td>Benjimed</td><td>XML(WS-Sigs)</td><td></td></tr>
             <tr><td>Sistema Animati</td><td>XML(WS-Sigs)</td><td></td></tr>
             <tr><td>Sinconecta</td><td>arquivo padrão como SIGS</td><td>Grava pedido e resultado direto na S3</td></tr>
-            <tr><td>RKM</td><td>WebSerice</td><td></td></tr>
+            <tr><td>RKM</td><td>WebService</td><td></td></tr>
             <tr><td>Sistema Pacs (pixeon)</td><td>XML(WS-Sigs)</td><td></td></tr>
             <tr><td>CS Imagem</td><td>XML(WS-Sigs)</td><td></td></tr>
             <tr><td>Pongelupe</td><td>XML(WS-Sigs)</td><td></td></tr>
@@ -179,6 +185,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
