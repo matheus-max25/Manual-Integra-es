@@ -56,3 +56,55 @@ if (document.getElementById("senha")) {
     }
   });
 }
+
+// ✅ Função de busca genérica para qualquer tabela
+function configurarBuscaTabela(inputId, tabelaIndex, mensagemId) {
+  const input = document.getElementById(inputId);
+  const tabela = document.querySelectorAll("table")[tabelaIndex];
+  const mensagem = document.getElementById(mensagemId);
+
+  if (!input || !tabela || !mensagem) return;
+
+  input.addEventListener("input", () => {
+    const termo = input.value.toLowerCase();
+    const linhas = tabela.querySelectorAll("tbody tr");
+    let encontrou = 0;
+
+    linhas.forEach(linha => {
+      const textoLinha = linha.textContent.toLowerCase();
+      const corresponde = textoLinha.includes(termo);
+
+      linha.style.display = corresponde ? "" : "none";
+      linha.classList.remove("destaque-unico");
+
+      if (corresponde) encontrou++;
+    });
+
+    if (encontrou === 0) {
+      mensagem.style.display = "block";
+    } else {
+      mensagem.style.display = "none";
+
+      if (encontrou === 1) {
+        const linhaUnica = Array.from(linhas).find(l => l.style.display !== "none");
+        if (linhaUnica) linhaUnica.classList.add("destaque-unico");
+      }
+    }
+  });
+}
+
+// ✅ Aplica estilo visual para o destaque (como Ctrl+F)
+const estilo = document.createElement("style");
+estilo.innerHTML = `
+  .destaque-unico {
+    background-color: yellow !important;
+    font-weight: bold;
+  }
+`;
+document.head.appendChild(estilo);
+
+// ✅ Inicializa os campos de busca após o DOM carregar
+document.addEventListener("DOMContentLoaded", () => {
+  configurarBuscaTabela("busca-apoios", 0, "mensagem-apoios");
+  configurarBuscaTabela("busca-sistemas", 1, "mensagem-sistemas");
+});
