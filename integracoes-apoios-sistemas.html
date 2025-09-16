@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Integrações Apoios / Sistemas</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Estilo básico da tabela (você pode mover para seu style.css) */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f0f0f0;
+      color: #004080;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="conteudo-site">
+
+    <!-- BOTÃO HOME -->
+    <button id="btn-home" onclick="irParaHome()" aria-label="Home">
+      <img src="img/Home.png" alt="Home" />
+    </button>
+
+    <!-- BOTÃO DE SAIR -->
+    <button id="btn-sair" onclick="sair()" aria-label="Sair">
+      <img src="img/LogOut.png" alt="Sair" />
+    </button>
+
+    <header>
+      <h1>Integrações Apoios / Sistemas</h1>
+    </header>
+
+    <main>
+      <section id="sistemas-content">
+        <h2>Integrações de Aoio WebService/XML e Integrações entre Sistemas</h2>
+        <p>Aqui você encontrará o NOME e VERSÃO de todas integrações que possuem parceria com o Worklab.</p>
+
+        <!-- TABELA APOIOS -->
+        <h2>Apoios</h2>
+        <table style="width: 100%; max-width: 1000px; margin: 20px auto; border-collapse: collapse; table-layout: fixed;">
+          <thead>
+            <tr>
+              <th style="width: 50%; background-color: #f0f0f0; color: #004080; border: 1px solid #ccc; padding: 8px 12px;">
+  Apoios
+</th>
+              <th style="width: 50%; background-color: #f0f0f0; color: #004080; border: 1px solid #ccc; padding: 8px 12px;">
+  Versão
+</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Alfa</td><td>XML</td></tr>
+            <tr><td>Alvaro</td><td>WebService e XML</td></tr>
+            <tr><td>ApoioLab</td><td>WebService e XML</td></tr>
+            <tr><td>Ares</td><td>WebService</td></tr>
+            <tr><td>Base Cientifica</td><td>XML</td></tr>
+            <tr><td>Brasil Apoio</td><td>WebService</td></tr>
+            <tr><td>CDA</td><td>WebService</td></tr>
+            <tr><td>Cedro</td><td>WebSerice</td></tr>
+            <tr><td>CSV</td><td>WebSerice</td></tr>
+            <tr><td>DB</td><td>WebService e XML</td></tr>
+            <tr><td>Esmeralda</td><td>XML</td></tr>
+            <tr><td>Eva</td><td>WebService</td></tr>
+            <tr><td>Fleury</td><td>XML</td></tr>
+            <tr><td>LabChecap</td><td>WebService</td></tr>
+            <tr><td>LPC</td><td>WebService</td></tr>
+            <tr><td>Maricondi</td><td>WebService e XML</td></tr>
+            <tr><td>MedImagem</td><td>WebService</td></tr>
+            <tr><td>Mena</td><td>WebService</td></tr>
+            <tr><td>Mercolab</td><td>WebService</td></tr>
+            <tr><td>Pardini</td><td>WebService e XML</td></tr>
+            <tr><td>Proradis</td><td>WebService</td></tr>
+            <tr><td>RF</td><td>WebService</td></tr>
+            <tr><td>Samuel Pessoa</td><td>WebService</td></tr>
+            <tr><td>São Marcos</td><td>WebService</td></tr>
+            <tr><td>Synvia</td><td>WebService</td></tr>
+            <tr><td>Vicente Lemos</td><td>WebService</td></tr>
+            <tr><td>Vikkie</td><td>WebService</td></tr>
+            <tr><td>WorklabWeb</td><td>WebService</td></tr>
+          </tbody>
+        </table>
+        <br>
+
+                <!-- TABELA SISTEMAS -->
+        <h2>Sistemas</h2>
+        <table style="width: 100%; max-width: 1000px; margin: 20px auto; border-collapse: collapse; table-layout: fixed;">
+          <thead>
+            <tr>
+              <th style="width: 33%; background-color: #f0f0f0; color: #004080; border: 1px solid #ccc; padding: 8px 12px;">
+  Sistemas
+</th>
+              <th style="width: 33%; background-color: #f0f0f0; color: #004080; border: 1px solid #ccc; padding: 8px 12px;">
+  Versão
+</th>
+              <th style="width: 34%; background-color: #f0f0f0; color: #004080; border: 1px solid #ccc; padding: 8px 12px;">
+  Informações Técnicas
+</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Integrador Worklab</td><td>XML(WS-Sigs)</td><td></td></tr>
+            <tr><td>Unimed Lins / S-line</td><td>WebService</td><td></td></tr>
+            <tr><td>Unimed Jacuí (PEP)</td><td>WebService</td><td></td></tr>
+            <tr><td>Unimed Rio Pardo</td><td>WebService</td><td></td></tr>
+            <tr><td>Unimed Campinas</td><td>WebService</td><td></td></tr>
+            <tr><td>SysHosp</td><td>arquivo TXT</td><td>Fica na aba Integrações</td></tr>
+            <tr><td>SOC</td><td>WebService</td><td></td></tr>
+            <tr><td>Wareline</td><td>XML(WS-Sigs)</td><td></td></tr>
+            <tr><td>Nephrosys</td><td>arquivo TXT</td><td></td></tr>
+            <tr><td>MedAlise</td><td>arquivo TXT</td><td>Fica na aba Integrações</td></tr>
+            <tr><td>DialSist</td><td>arquivo TXT</td><td>Fica na aba Integrações</td></tr>
+            <tr><td>Datahealth</td><td>Via FTP</td><td></td></tr>
+            <tr><td>Feegow</td><td>WebSerice</td><td></td></tr>
+            <tr><td>Clinux</td><td>XML(WS-Sigs)</td><td></td></tr>
+            <tr><td>Focus</td><td>XML(WS-Sigs)</td><td></td></tr>
+            <tr><td>Sara</td><td>XML(WS-Sigs)</td><td></td></tr>
+            <tr><td>Gesio</td><td>XML(WS-Sigs)</td><td></td></tr>
+            <tr><td>Sigs</td><td>XML(WS-Sigs)</td><td></td></tr>
+            <tr><td>Biodata</td><td>XML(WS-Sigs)</td><td></td></tr>
+            <tr><td>Systema</td><td>XML(WS-Sigs)</td><td></td></tr>
+            <tr><td>Tasy</td><td>XML(WS-Sigs)</td><td></td></tr>
+            <tr><td>MV Soul</td><td>WebSerice</td><td>Responsável Carlos Jardim - ConectBit</td></tr>
+            <tr><td>MV-2000</td><td>WebSerice</td><td>Responsável Carlos Jardim - ConectBit</td></tr>
+            <tr><td>Syslab</td><td>XML(WS-Sigs)</td><td></td></tr>
+            <tr><td>STG</td><td>WebSerice</td><td></td></tr>
+            <tr><td>IDS Saúde/Maestro</td><td>WebSerice</td><td></td></tr>
+            <tr><td>IPM</td><td>WebSerice</td><td></td></tr>
+            <tr><td>BossMed</td><td>WebSerice</td><td></td></tr>
+            <tr><td>Sline-Certificação Digital</td><td>integrador WS-Sline</td><td></td></tr>
+            <tr><td>Sline - Financeiro</td><td>WebSerice</td><td>Faturamento Unimed</td></tr>
+            <tr><td>Orizon</td><td>WebSerice</td><td>Faturamento convênio Orizon</td></tr>
+            <tr><td>IPM</td><td>WebSerice</td><td></td></tr>
+            <tr><td>Siscan</td><td>arquivo TXT</td><td>Fica na aba Integrações</td></tr>
+            <tr><td>Sistema SPDATA</td><td>WebSerice (Padrão SPDATA)</td><td></td></tr>
+            <tr><td>Friorilli Sistemas</td><td>arquivo TXT</td><td>Fica na aba Integrações</td></tr>
+            <tr><td>IPE/IP WIN</td><td>arquivo TXT / PDF</td><td>Fica na aba Integrações - Faturamento</td></tr>
+            <tr><td>BPA - SUS</td><td>arquivo TXT</td><td>Fica na aba Integrações</td></tr>
+            <tr><td>Sisreg</td><td>arquivo TXT</td><td>Fica na aba Integrações</td></tr>
+            <tr><td>SONIC - SNIK MED</td><td>XML(WS-Sigs)</td><td></td></tr>
+            <tr><td>WorkVet x Labclound</td><td>WebService</td><td></td></tr>
+            <tr><td>Ventry</td><td>XML(WS-Sigs)</td><td></td></tr>
+            <tr><td>Sigmo</td><td>XML(WS-Sigs)</td><td></td></tr>
+            <tr><td>Benjimed</td><td>XML(WS-Sigs)</td><td></td></tr>
+            <tr><td>Sistema Animati</td><td>XML(WS-Sigs)</td><td></td></tr>
+            <tr><td>Sinconecta</td><td>arquivo padrão como SIGS</td><td>Grava pedido e resultado direto na S3</td></tr>
+            <tr><td>RKM</td><td>WebSerice</td><td></td></tr>
+            <tr><td>Sistema Pacs (pixeon)</td><td>XML(WS-Sigs)</td><td></td></tr>
+            <tr><td>CS Imagem</td><td>XML(WS-Sigs)</td><td></td></tr>
+            <tr><td>Pongelupe</td><td>XML(WS-Sigs)</td><td></td></tr>
+            <tr><td>Ame (Salutem)</td><td>XML(WS-Sigs)</td><td></td></tr>
+            <tr><td>Sistema Giesp empresa Siss Saúde</td><td></td><td></td></tr>
+            <tr><td>MEDX</td><td>XML(WS-Sigs)</td><td></td></tr>
+            <tr><td>Virtus</td><td>XML(WS-Sigs)</td><td>Prontuário Eletrônico</td></tr>
+            <tr><td>Sistema viver</td><td>XML(WS-Sigs)</td><td></td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 - by Matheus H. M. Teixeira</p>
+    </footer>
+
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

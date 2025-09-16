@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instruções das Integrações</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- TELA DE LOGIN -->
+  <div id="login-screen">
+    <div class="login-container">
+      <h2>Acesso Restrito</h2>
+      <p>Digite a senha para acessar o conteúdo.</p>
+      <input type="password" id="senha" placeholder="Senha">
+      <button onclick="verificarSenha()">Entrar</button>
+      <p id="erro">Senha incorreta. Tente novamente.</p>
+    </div>
+  </div>
+
+  <!-- CONTEÚDO DO SITE -->
+  <div id="conteudo-site">
+    
+    <!-- BOTÃO DE SAIR -->
+    <button id="btn-sair" onclick="sair()">
+      <img src="img/LogOut.png" alt="Sair">
+    </button>
+
+    <!-- BOTÃO DE HOME -->
+    <button id="btn-home" onclick="irParaHome()">
+      <img src="img/Home.png" alt="Home">
+    </button>
+
+    <!-- TELA INICIAL -->
+    <header>
+      <h1>Manual de Integrações WorklabWeb</h1>
+      <div class="search-box">
+        <p>
+          <strong>Atenção:</strong><br>Este é um site exclusivo para técnicos do Worklab. Não nos responsabilizamos por repasses dele aos clientes, portanto, não envie este site a eles!<br>
+          Agradecemos pela colaboração.
+        </p>
+      </div>
+    </header>
+
+    <section class="menu">
+      <a href="integracao-ws-sigs.html" class="menu-item">
+        <img src="img/ImgWsSigs.png" alt="WS-SIGS">
+        <span>Integração Padrão<br>WS-SIGS</span>
+      </a>
+
+      <a href="parametros-integracoes-apoio.html" class="menu-item">
+        <img src="img/hashtag.png" alt="Parametros de Integracao">
+        <span>Parâmetros de Integração</span>
+      </a>
+
+      <a href="integracoes-apoios-sistemas.html" class="menu-item">
+        <img src="img/listaIntegra.png" alt="Sistemas">
+        <span>Lista de Integrações</span>
+      </a>
+    </section>
+
+    <main>
+      <section id="integracao-ws-sigs">
+        <h2>Integração Padrão WS-SIGS</h2>
+        <p>Nome das integrações e manuais de configuração.</p>
+      </section>
+
+      <section id="parâmetros-integracoes-web">
+        <h2>Parâmetros Integrações Web</h2>
+        <p>Quais parâmetros usar para cada laudo de Apoio.</p>
+      </section>
+
+      <section id="integracoes-apoios-sistemas">
+        <h2>Lista de Integrações</h2>
+        <p>Todas integrações que possuem parceria com o Worklab.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 - by Matheus H. M. Teixeira</p>
+    </footer>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
