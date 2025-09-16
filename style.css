@@ -236,4 +236,23 @@ footer {
 /* ESCONDE CONTEÚDO ATÉ LOGAR */
 #conteudo-site {
   display: none;
+
+}
+
+/* ESTILO DOS TÍTULOS DE APOIO COM LINKS */
+main h1 {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  color: #002b45;
+}
+
+main h1 a {
+  color: #002b45;
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+main h1 a:hover {
+  color: #004d73;
+  text-decoration: underline;
 }
