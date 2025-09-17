@@ -30,6 +30,11 @@ function voltar() {
   window.location.href = "parametros-integracoes-apoio.html";
 }
 
+// Função voltar para a página de integrações padrões/api (lista principal)
+function voltar2() {
+  window.location.href = "integracao-ws-sigs.html";
+}
+
 // ✅ Função para "sair" e voltar à tela de login (funciona em todas páginas)
 function sair() {
   sessionStorage.removeItem("autenticado"); // Limpa estado de login
