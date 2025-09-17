@@ -134,7 +134,7 @@ header h1 {
 }
 
 .menu-item > span:first-child {
-  margin-bottom: 20px; /* aumenta o espaço da palavra Configuração no index.php */
+  margin-bottom: 30px; /* aumenta o espaço da palavra Configuração no index.php */
 }
 
 .menu-item:hover {
