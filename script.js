@@ -25,6 +25,11 @@ function verificarSenha() {
   }
 }
 
+// Função voltar para a página de integrações (lista principal)
+function voltar() {
+  window.location.href = "parametros-integracoes-apoio.html";
+}
+
 // ✅ Função para "sair" e voltar à tela de login (funciona em todas páginas)
 function sair() {
   sessionStorage.removeItem("autenticado"); // Limpa estado de login
