@@ -204,6 +204,35 @@ footer {
   filter: brightness(0) invert(1);
 }
 
+/* BOTÃO VOLTAR */
+#btn-back {
+  position: fixed;
+  top: 20px;
+  left: 80px; /* 50px (home) + 10px margem + 20px padding */
+  background: #002b45;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: background 0.3s ease;
+}
+
+#btn-back:hover {
+  background: #004d73;
+}
+
+#btn-back img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
 /* BOTÃO HOME */
 #btn-home {
   position: fixed;
