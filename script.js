@@ -34,7 +34,7 @@ function sair() {
 // ✅ Função do botão HOME (volta à seção principal sem recarregar)
 function irParaHome() {
   // Detecta se estamos no index.html
-  const isIndex = window.location.pathname.endsWith("index.html") || window.location.pathname === "/" || window.location.pathname.endsWith("/index");
+  const isIndex = window.location.pathname.includes("index");
 
   if (isIndex) {
     // Rola até o topo apenas se estiver no index.html
@@ -103,40 +103,6 @@ estilo.innerHTML = `
 `;
 document.head.appendChild(estilo);
 
-// ✅ Inicializa os campos de busca após o DOM carregar
-document.addEventListener("DOMContentLoaded", () => {
-  // Se ainda usar tabelas, mantenha essas chamadas:
-  // configurarBuscaTabela("busca-apoios", 0, "mensagem-apoios");
-  // configurarBuscaTabela("busca-sistemas", 1, "mensagem-sistemas");
-
-  // ✅ Busca em títulos (h1) de Apoios
-  configurarBuscaTitulos("busca-apoios", "#campos-web-content", "mensagem-apoios");
-});
-
-// ✅ Função de busca para títulos <h1> com links (ex: Apoios ou Sistemas)
-function configurarBuscaTitulos(inputId, containerSelector, mensagemId) {
-  const input = document.getElementById(inputId);
-  const container = document.querySelector(containerSelector);
-  const mensagem = document.getElementById(mensagemId);
-
-  if (!input || !container || !mensagem) return;
-
-  input.addEventListener("input", () => {
-    const termo = input.value.toLowerCase();
-    const titulos = container.querySelectorAll("h1");
-    let encontrou = false;
-
-    titulos.forEach(titulo => {
-      const texto = titulo.textContent.toLowerCase();
-      const corresponde = texto.includes(termo);
-      titulo.style.display = corresponde ? "block" : "none";
-      if (corresponde) encontrou = true;
-    });
-
-    mensagem.style.display = encontrou ? "none" : "block";
-  });
-}
-
 // ✅ Função de busca para títulos <h1> com links (ex: Apoios ou Sistemas)
 function configurarBuscaTitulos(inputId, containerSelector, mensagemId) {
   const input = document.getElementById(inputId);
@@ -163,6 +129,11 @@ function configurarBuscaTitulos(inputId, containerSelector, mensagemId) {
 
 // ✅ Inicializa os campos de busca após o DOM carregar
 document.addEventListener("DOMContentLoaded", () => {
+  // Configura a busca para as tabelas de Apoios e Sistemas
+  configurarBuscaTabela("busca-apoios", 0, "mensagem-apoios");
+  configurarBuscaTabela("busca-sistemas", 1, "mensagem-sistemas");
+
+  // Busca em títulos (h1) de Apoios e Sistemas
   configurarBuscaTitulos("busca-apoios", "#campos-web-content", "mensagem-apoios");
   configurarBuscaTitulos("busca-sistemas", "#ws-sigs-content", "mensagem-sistemas");
 });
