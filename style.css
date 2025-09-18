@@ -165,18 +165,12 @@ main h2 {
 main h3 {
   color: #0a0a0a;
   font-size: 12px;
-  display: inline-block;
   margin: 0;
-  padding-right: 5px;
-  vertical-align: middle;
 }
 
-main h4 {
+main h3 span {
   color: #4f4f4f;
   font-size: 11px;
-  display: inline-block;
-  margin: 0;
-  vertical-align: middle;
 }
 
 main p {
