@@ -186,6 +186,7 @@ footer {
   background: #002b45;
   color: white;
   font-size: 0.9rem;
+  position: absolute;
 
   /* CORREÇÃO: Removido margin-top para evitar flutuação */
 }
