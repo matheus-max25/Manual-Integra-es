@@ -162,6 +162,12 @@ main h2 {
   padding-bottom: 5px;
 }
 
+main h3 {
+  color: #0a0a0a;
+  margin: 25px 0 10px 0;
+  padding-bottom: 5px;
+}
+
 main p {
   margin-bottom: 15px;
   color: #444;
