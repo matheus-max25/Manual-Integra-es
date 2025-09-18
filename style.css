@@ -97,16 +97,16 @@ header h1 {
 /* MENU DE BOTÕES */
 .menu {
   display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin: 50px auto;
-  flex-wrap: wrap;
+  justify-content: center; /* Centraliza os itens */
+  gap: 30px; /* Ajusta o espaçamento entre os itens */
+  margin: 50px auto; /* Espaço acima e abaixo do menu */
+  flex-wrap: wrap; /* Permite que os itens quebrem de linha em telas menores */
 }
 
 .menu-item {
   background: #002b45;
   color: white;
-  width: 200px;
+  width: 200px; /* Tamanho fixo, mas pode ser alterado com media queries */
   height: 200px;
   border-radius: 25%;
   display: flex;
@@ -134,7 +134,7 @@ header h1 {
 }
 
 .menu-item > span:first-child {
-  margin-bottom: 30px; /* aumenta o espaço da palavra Configuração no index.php */
+  margin-bottom: 30px; /* Ajuste o espaço acima do texto */
 }
 
 .menu-item:hover {
@@ -142,6 +142,25 @@ header h1 {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .menu-item {
+    width: 150px; /* Diminui a largura em telas menores */
+    height: 150px;
+  }
+  .menu {
+    gap: 20px; /* Ajusta o espaçamento entre os itens */
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-item {
+    width: 120px; /* Ajuste ainda maior para telas muito pequenas */
+    height: 120px;
+  }
+}
+
 
 /* CONTEÚDO PRINCIPAL */
 main {
