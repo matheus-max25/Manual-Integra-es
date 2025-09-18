@@ -164,8 +164,8 @@ main h2 {
 
 main h3 {
   color: #0a0a0a;
+  margin: 25px 0 10px 0;
   font-size: 12px;
-  margin: 0;
 }
 
 main h3 span {
