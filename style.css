@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/* CORREÇÃO AQUI */
+/* FIX FOOTER */
 html, body {
   height: 100%;
 }
@@ -17,7 +17,7 @@ body {
   color: #333;
   line-height: 1.6;
 
-  /* CORREÇÃO AQUI */
+  /* FIX FOOTER */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -134,7 +134,7 @@ header h1 {
 }
 
 .menu-item > span:first-child {
-  margin-bottom: 30px; /* aumenta o espaço da palavra Configuração no index.php */
+  margin-bottom: 30px;
 }
 
 .menu-item:hover {
@@ -152,7 +152,7 @@ main {
   border-radius: 12px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 
-  /* CORREÇÃO AQUI */
+  /* FIX FOOTER */
   flex: 1;
 }
 
@@ -187,8 +187,6 @@ footer {
   background: #002b45;
   color: white;
   font-size: 0.9rem;
-
-  /* CORREÇÃO: Removido margin-top para evitar flutuação */
 }
 
 /* BOTÃO SAIR */
@@ -224,7 +222,7 @@ footer {
 #btn-back {
   position: fixed;
   top: 20px;
-  left: 80px; /* 50px (home) + 10px margem + 20px padding */
+  left: 80px;
   background: #002b45;
   border: none;
   border-radius: 50%;
@@ -253,7 +251,7 @@ footer {
 #btn-back2 {
   position: fixed;
   top: 20px;
-  left: 80px; /* 50px (home) + 10px margem + 20px padding */
+  left: 80px;
   background: #002b45;
   border: none;
   border-radius: 50%;
@@ -310,7 +308,6 @@ footer {
 /* ESCONDE CONTEÚDO ATÉ LOGAR */
 #conteudo-site {
   display: none;
-
 }
 
 /* ESTILO DOS TÍTULOS DE APOIO COM LINKS */
