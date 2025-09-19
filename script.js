@@ -153,19 +153,15 @@ function verificarRodape() {
   const footer = document.querySelector("footer");
   if (!footer) return;
 
-  const chegouNoFinal =
-  document.body.offsetHeight <= window.innerHeight ||
-  window.innerHeight + window.scrollY >= document.body.offsetHeight;
+  const corpoMenorQueTela = document.body.offsetHeight <= window.innerHeight;
+  const chegouNoFinal = window.innerHeight + window.scrollY >= document.body.offsetHeight;
 
-  if (chegouNoFinal) {
+  if (chegouNoFinal || corpoMenorQueTela) {
     footer.style.display = "block";
   } else {
     footer.style.display = "none";
   }
 }
 
-// Verifica ao rolar a página
 window.addEventListener("scroll", verificarRodape);
-
-// Verifica ao carregar a página (importante para telas grandes)
 window.addEventListener("load", verificarRodape);
