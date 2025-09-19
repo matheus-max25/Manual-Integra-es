@@ -180,9 +180,9 @@ main p {
   border-bottom: 2px solid #e0e0e0;
 }
 
+/* RODAPÉ */
 footer {
-  display: block;           /* mantém o footer ocupando espaço */
-  visibility: hidden;       /* esconde visualmente (mas mantém no layout) */
+  display: none;
   text-align: center;
   padding: 15px;
   background: #002b45;
