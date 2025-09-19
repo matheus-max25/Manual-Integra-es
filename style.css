@@ -182,15 +182,12 @@ main p {
 
 /* RODAPÉ */
 footer {
-  display: none; /* escondido por padrão */
+  display: none;
   text-align: center;
   padding: 15px;
   background: #002b45;
   color: white;
   font-size: 0.9rem;
-
-  /* REMOVE a parte fixa! */
-  position: static; /* ou simplesmente remova a propriedade 'position' */
 }
 
 /* BOTÃO SAIR */

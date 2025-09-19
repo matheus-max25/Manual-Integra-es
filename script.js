@@ -149,19 +149,15 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ✅ Mostrar footer apenas quando o usuário chega no final da página
-function verificarRodape() {
+window.addEventListener("scroll", () => {
   const footer = document.querySelector("footer");
   if (!footer) return;
 
-  const corpoMenorQueTela = document.body.offsetHeight <= window.innerHeight;
   const chegouNoFinal = window.innerHeight + window.scrollY >= document.body.offsetHeight;
 
-  if (chegouNoFinal || corpoMenorQueTela) {
+  if (chegouNoFinal) {
     footer.style.display = "block";
   } else {
     footer.style.display = "none";
   }
-}
-
-window.addEventListener("scroll", verificarRodape);
-window.addEventListener("load", verificarRodape);
+});
