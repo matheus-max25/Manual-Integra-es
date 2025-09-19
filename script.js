@@ -149,15 +149,20 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ✅ Mostrar footer apenas quando o usuário chega no final da página
-window.addEventListener("scroll", () => {
+function verificarFooter() {
   const footer = document.querySelector("footer");
   if (!footer) return;
 
   const chegouNoFinal = window.innerHeight + window.scrollY >= document.body.offsetHeight;
 
-  if (chegouNoFinal) {
-    footer.style.display = "block";
-  } else {
-    footer.style.display = "none";
-  }
-});
+  footer.style.visibility = chegouNoFinal ? "visible" : "hidden";
+}
+
+// roda quando a pessoa rolar a página
+window.addEventListener("scroll", verificarFooter);
+
+// roda quando a página carrega (para telas grandes, sem scroll)
+window.addEventListener("load", verificarFooter);
+
+// roda ao redimensionar a janela (mudança de altura)
+window.addEventListener("resize", verificarFooter);
