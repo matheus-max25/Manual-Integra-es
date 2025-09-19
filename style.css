@@ -182,12 +182,13 @@ main p {
 
 /* RODAPÉ */
 footer {
-  display: grid; /* começa escondido */
+  display: block; /* mantém no layout */
   text-align: center;
   padding: 15px;
   background: #002b45;
   color: white;
   font-size: 0.9rem;
+  visibility: hidden; /* apenas esconde visualmente */
 }
 
 /* BOTÃO SAIR */
