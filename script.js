@@ -156,16 +156,8 @@ window.addEventListener("scroll", () => {
   const chegouNoFinal = window.innerHeight + window.scrollY >= document.body.offsetHeight;
 
   if (chegouNoFinal) {
-    footer.style.visibility = "visible";  // Tornar o footer visível
+    footer.style.display = "block";
   } else {
-    footer.style.visibility = "hidden";   // Esconder o footer
-  }
-});
-
-// Exibe o footer automaticamente quando a página é carregada
-window.addEventListener("load", () => {
-  const footer = document.querySelector("footer");
-  if (footer) {
-    footer.style.visibility = "visible";  // Mostrar o footer ao carregar
+    footer.style.display = "none";
   }
 });
