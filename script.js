@@ -158,6 +158,6 @@ window.addEventListener("scroll", () => {
   if (chegouNoFinal) {
     footer.style.display = "block";
   } else {
-    footer.style.display = "none";
+    footer.style.display = "block";
   }
 });
