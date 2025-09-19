@@ -182,7 +182,7 @@ main p {
 
 /* RODAPÉ */
 footer {
-  display: none; /* começa escondido */
+  display: block; /* começa escondido */
   text-align: center;
   padding: 15px;
   background: #002b45;
