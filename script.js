@@ -156,20 +156,8 @@ window.addEventListener("scroll", () => {
   const chegouNoFinal = window.innerHeight + window.scrollY >= document.body.offsetHeight;
 
   if (chegouNoFinal) {
-    footer.style.visibility = "visible"; // mostra o footer
+    footer.style.display = "block";
   } else {
-    footer.style.visibility = "hidden";  // esconde o footer
-  }
-});
-
-// Corrige para telas grandes (sem scroll)
-window.addEventListener("load", () => {
-  const footer = document.querySelector("footer");
-  if (!footer) return;
-
-  const precisaScroll = document.body.scrollHeight > window.innerHeight;
-
-  if (!precisaScroll) {
-    footer.style.visibility = "visible";
+    footer.style.display = "none";
   }
 });
