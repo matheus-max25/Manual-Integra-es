@@ -182,17 +182,12 @@ main p {
 
 /* RODAPÉ */
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-
+  display: none; /* começa escondido */
   text-align: center;
   padding: 15px;
   background: #002b45;
   color: white;
   font-size: 0.9rem;
-  z-index: 1000;
 }
 
 /* BOTÃO SAIR */

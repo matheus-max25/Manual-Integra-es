@@ -147,3 +147,17 @@ document.addEventListener("DOMContentLoaded", () => {
   configurarBuscaTitulos("busca-apoios", "#campos-web-content", "mensagem-apoios");
   configurarBuscaTitulos("busca-sistemas", "#ws-sigs-content", "mensagem-sistemas");
 });
+
+// ✅ Mostrar footer apenas quando o usuário chega no final da página
+window.addEventListener("scroll", () => {
+  const footer = document.querySelector("footer");
+  if (!footer) return;
+
+  const chegouNoFinal = window.innerHeight + window.scrollY >= document.body.offsetHeight;
+
+  if (chegouNoFinal) {
+    footer.style.display = "block";
+  } else {
+    footer.style.display = "none";
+  }
+});
