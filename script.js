@@ -154,7 +154,8 @@ function verificarRodape() {
   if (!footer) return;
 
   const chegouNoFinal =
-    window.innerHeight + window.scrollY >= document.body.offsetHeight;
+  document.body.offsetHeight <= window.innerHeight ||
+  window.innerHeight + window.scrollY >= document.body.offsetHeight;
 
   if (chegouNoFinal) {
     footer.style.display = "block";
