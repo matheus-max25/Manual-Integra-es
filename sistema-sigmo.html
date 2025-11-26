@@ -33,8 +33,80 @@
     </header>
 
     <main>
-      <p>Aqui está o uso e configuração da integração <strong>Sigmo</strong>.</p>
-      <!-- Coloque o conteúdo aqui -->
+      <p>Aqui estão os parâmetros específicos para o apoio <strong>Grupo Assessor</strong>. Utilize com atenção.</p>
+
+<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+  <thead>
+    <tr>
+      <th style="text-align: left; border: none; padding: 4px; width: 25%;"><h2>Link Download</h2></th>
+      <th style="text-align: left; border: none; padding: 4px; width: 25%;"><h2>WS SIGS</h2></th>
+      <th style="text-align: left; border: none; padding: 4px; width: 15%;"><h2></h2></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><h3></h3></td>
+      <td><h3>https://s3.amazonaws.com/storage.worklabweb.com.br/downloads/integracoes/ws-sigs-xml+Setup+1.0.0.exe</h3></td>
+      <td><h3><span style="color:#4f4f4f; font-size:11px;"></span></h3></td>
+    </tr>
+    <tr>
+      <td><h3>URL worklab (Importar Paciente):</h3></td>
+      <td><h3>https://api.worklabweb.com.br/webservice/assessor/import</h3></td>
+      <td><h3><span style="color:#4f4f4f; font-size:11px;"></span></h3></td>
+    </tr>
+    <tr>
+      <td><h3>URL worklab (Resultados):</h3></td>
+      <td><h3>https://api.worklabweb.com.br/webservice/assessor/results</h3></td>
+      <td><h3><span style="color:#4f4f4f; font-size:11px;"></span></h3></td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+  <thead>
+    <tr>
+      <th style="text-align: left; border: none; padding: 4px; width: 25%;"><h2>ATIVAÇÃO</h2></th>
+      <th style="text-align: left; border: none; padding: 4px; width: 75%;"><h2>(tabelas para o SQL, possui no id 128)</h2></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><h3>integracao_assessor</h3></td>
+      <td><h3></h3></td>
+      <td><h3><span style="color:#4f4f4f; font-size:11px;"></span></h3></td>
+    </tr>
+    <tr>
+      <td><h3>configuracao_assessor</h3></td>
+      <td><h3>Define os filtros de recebimento Convênio, Unidade e Usuário</h3></td>
+      <td><h3><span style="color:#4f4f4f; font-size:11px;"></span></h3></td>
+    </tr>
+    <tr>
+      <td><h3>exames_webservices</h3></td>
+      <td><h3>Seleciona os exames que serão realizados</h3></td>
+      <td><h3><span style="color:#4f4f4f; font-size:11px;"></span></h3></td>
+    </tr>
+    <tr>
+      <td><h3>clientes_webservices</h3></td>
+      <td><h3>Adicionar Token do WorklabGestor direto na tabela SQL, fornecer o token ao cliente</h3></td>
+      <td><h3><span style="color:#4f4f4f; font-size:11px;"></span></h3></td>
+    </tr>
+    <tr>
+      <td><h3>Ativar integração:</h3></td>
+      <td><h3>Acessar o WorklabGestor - ir em Relatórios - Integrações</h3></td>
+      <td><h3><span style="color:#4f4f4f; font-size:11px;"></span></h3></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<br>
+<h3>- Dentro do Worklab devem configurar Convenio, Unidade e Usuário da seguinte forma:<br>Aba: Integrações<br>Opção: Configuração Grupo Assessor</h3>
+  <br>
+<h3>Caso um deles não estejam configurados, os pacientes não serão importados.</h3>
+<h3>- Enviar para o cliente apenas os dois Url's de Endpoint e o Token gerado no WorklabGestor</h3>
+
     </main>
 
     <footer>
