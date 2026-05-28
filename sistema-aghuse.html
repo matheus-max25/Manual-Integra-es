@@ -35,61 +35,83 @@
     <main>
       <p>Aqui está o uso e configuração da integração <strong>AGHuse</strong>.</p>
       <style>
-    .tabela-integracao {
+    .aghuse-doc {
         width: 100%;
         border-collapse: collapse;
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-        color: #333;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        color: #000;
+        line-height: 1.45;
     }
 
-    .tabela-integracao td {
-        border: 1px solid #dcdcdc;
-        padding: 10px;
+    .aghuse-doc td {
+        padding: 6px 10px;
         vertical-align: top;
     }
 
-    .titulo-secao {
-        background: #f3f3f3;
+    .aghuse-title {
+        font-size: 22px;
         font-weight: bold;
+        padding-top: 0;
+        padding-bottom: 14px;
+    }
+
+    .aghuse-section {
         font-size: 15px;
-    }
-
-    .subtitulo {
         font-weight: bold;
-        background: #fafafa;
+        padding-top: 18px !important;
+        padding-bottom: 6px !important;
     }
 
-    .texto {
-        line-height: 1.6;
+    .aghuse-text {
+        padding-top: 0;
+        padding-bottom: 8px;
     }
 
-    .lista {
-        padding-left: 18px;
+    .aghuse-list {
         margin: 0;
+        padding-left: 18px;
     }
 
-    .lista li {
-        margin-bottom: 5px;
+    .aghuse-list li {
+        margin-bottom: 4px;
+    }
+
+    .aghuse-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 6px;
+        margin-bottom: 10px;
+    }
+
+    .aghuse-table td {
+        border: 1px solid #bfbfbf;
+        padding: 7px 10px;
+        font-size: 13px;
+    }
+
+    .aghuse-table .head {
+        background: #efefef;
+        font-weight: bold;
     }
 </style>
 
-<table class="tabela-integracao">
+<table class="aghuse-doc">
 
     <tr>
-        <td colspan="2" class="titulo-secao">
+        <td class="aghuse-title">
             Integração AGHUse
         </td>
     </tr>
 
     <tr>
-        <td colspan="2" class="subtitulo">
+        <td class="aghuse-section">
             Visão Geral
         </td>
     </tr>
 
     <tr>
-        <td colspan="2" class="texto">
+        <td class="aghuse-text">
             A integração AGHUse é responsável pela importação de pacientes
             e exportação de resultados. A ativação da integração é feita
             pelo WorklabGestor.
@@ -97,14 +119,14 @@
     </tr>
 
     <tr>
-        <td colspan="2" class="subtitulo">
+        <td class="aghuse-section">
             Regras da Integração
         </td>
     </tr>
 
     <tr>
-        <td colspan="2">
-            <ul class="lista">
+        <td>
+            <ul class="aghuse-list">
                 <li>O de/para de exames é feito pelo lado do AGHUse.</li>
                 <li>Os códigos enviados devem estar no padrão do Worklab.</li>
                 <li>Não é realizado envio de PDF.</li>
@@ -114,35 +136,44 @@
     </tr>
 
     <tr>
-        <td colspan="2" class="subtitulo">
+        <td class="aghuse-section">
             Parâmetros Necessários
         </td>
     </tr>
 
     <tr>
-        <td width="35%"><strong>Parâmetro</strong></td>
-        <td><strong>Descrição</strong></td>
+        <td>
+
+            <table class="aghuse-table">
+                <tr class="head">
+                    <td width="35%">Parâmetro</td>
+                    <td>Descrição</td>
+                </tr>
+
+                <tr>
+                    <td>usuarioAghuse</td>
+                    <td>Usuário da integração</td>
+                </tr>
+
+                <tr>
+                    <td>tokenAghuse</td>
+                    <td>Token da integração</td>
+                </tr>
+            </table>
+
+        </td>
     </tr>
 
     <tr>
-        <td>usuarioAghuse</td>
-        <td>Usuário da integração</td>
-    </tr>
-
-    <tr>
-        <td>tokenAghuse</td>
-        <td>Token da integração</td>
-    </tr>
-
-    <tr>
-        <td colspan="2" class="subtitulo">
+        <td class="aghuse-section">
             Estrutura Necessária
         </td>
     </tr>
 
     <tr>
-        <td colspan="2">
-            <ul class="lista">
+        <td>
+            Tabelas obrigatórias:
+            <ul class="aghuse-list" style="margin-top:6px;">
                 <li>integracao_aghuse</li>
                 <li>integracao_aghuse_de_para</li>
             </ul>
@@ -150,43 +181,51 @@
     </tr>
 
     <tr>
-        <td colspan="2" class="subtitulo">
+        <td class="aghuse-section">
             Alteração de Campo
         </td>
     </tr>
 
     <tr>
-        <td><strong>Campo</strong></td>
-        <td><strong>Tipo</strong></td>
+        <td>
+
+            <table class="aghuse-table">
+                <tr class="head">
+                    <td width="35%">Campo</td>
+                    <td>Tipo</td>
+                </tr>
+
+                <tr>
+                    <td>codigo_aghuse</td>
+                    <td>VARCHAR(5) DEFAULT NULL</td>
+                </tr>
+            </table>
+
+        </td>
     </tr>
 
     <tr>
-        <td>codigo_aghuse</td>
-        <td>VARCHAR(5) DEFAULT NULL</td>
-    </tr>
-
-    <tr>
-        <td colspan="2" class="subtitulo">
+        <td class="aghuse-section">
             De/Para de Resultados
         </td>
     </tr>
 
     <tr>
-        <td colspan="2" class="texto">
+        <td class="aghuse-text">
             É necessário configurar de/para para exames com laudo montado,
             exames de apoio e exames com resultados compostos.
         </td>
     </tr>
 
     <tr>
-        <td colspan="2" class="subtitulo">
+        <td class="aghuse-section">
             Observações
         </td>
     </tr>
 
     <tr>
-        <td colspan="2">
-            <ul class="lista">
+        <td>
+            <ul class="aghuse-list">
                 <li>
                     Exames compostos devem ser configurados manualmente
                     na tela de de/para.
