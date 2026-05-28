@@ -34,7 +34,96 @@
 
     <main>
       <p>Aqui está o uso e configuração da integração <strong>AGHuse</strong>.</p>
-      <!-- Coloque o conteúdo aqui -->
+      <tr>
+    <td colspan="2"><strong>Visão Geral</strong></td>
+</tr>
+
+<tr>
+    <td colspan="2">
+        A integração AGHUse é responsável pela importação de pacientes e exportação de resultados.
+        A ativação da integração é feita pelo WorklabGestor.
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2"><strong>Regras da Integração</strong></td>
+</tr>
+
+<tr>
+    <td>
+        • O de/para de exames é feito pelo lado do AGHUse.<br>
+        • Os códigos enviados devem estar no padrão do Worklab.<br>
+        • Não é realizado envio de PDF.<br>
+        • Os resultados são enviados campo à campo.
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2"><strong>Parâmetros Necessários</strong></td>
+</tr>
+
+<tr>
+    <td><strong>Parâmetro</strong></td>
+    <td><strong>Descrição</strong></td>
+</tr>
+
+<tr>
+    <td>usuarioAghuse</td>
+    <td>Usuário da integração</td>
+</tr>
+
+<tr>
+    <td>tokenAghuse</td>
+    <td>Token da integração</td>
+</tr>
+
+<tr>
+    <td colspan="2"><strong>Estrutura Necessária</strong></td>
+</tr>
+
+<tr>
+    <td colspan="2">
+        • integracao_aghuse<br>
+        • integracao_aghuse_de_para
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2"><strong>Alteração de Campo</strong></td>
+</tr>
+
+<tr>
+    <td><strong>Campo</strong></td>
+    <td><strong>Tipo</strong></td>
+</tr>
+
+<tr>
+    <td>codigo_aghuse</td>
+    <td>VARCHAR(5) DEFAULT NULL</td>
+</tr>
+
+<tr>
+    <td colspan="2"><strong>De/Para de Resultados</strong></td>
+</tr>
+
+<tr>
+    <td colspan="2">
+        É necessário configurar de/para para exames com laudo montado,
+        exames de apoio e exames com resultados compostos.
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2"><strong>Observações</strong></td>
+</tr>
+
+<tr>
+    <td colspan="2">
+        • Exames compostos devem ser configurados manualmente na tela de de/para.<br>
+        • Caso o código do exame venha diferente do padrão Worklab,
+        a integração não localizará o exame corretamente.
+    </td>
+</tr>
     </main>
 
     <footer>
