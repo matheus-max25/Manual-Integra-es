@@ -34,96 +34,173 @@
 
     <main>
       <p>Aqui está o uso e configuração da integração <strong>AGHuse</strong>.</p>
-      <tr>
-    <td colspan="2"><strong>Visão Geral</strong></td>
-</tr>
+      <style>
+    .tabela-integracao {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        color: #333;
+    }
 
-<tr>
-    <td colspan="2">
-        A integração AGHUse é responsável pela importação de pacientes e exportação de resultados.
-        A ativação da integração é feita pelo WorklabGestor.
-    </td>
-</tr>
+    .tabela-integracao td {
+        border: 1px solid #dcdcdc;
+        padding: 10px;
+        vertical-align: top;
+    }
 
-<tr>
-    <td colspan="2"><strong>Regras da Integração</strong></td>
-</tr>
+    .titulo-secao {
+        background: #f3f3f3;
+        font-weight: bold;
+        font-size: 15px;
+    }
 
-<tr>
-    <td>
-        • O de/para de exames é feito pelo lado do AGHUse.<br>
-        • Os códigos enviados devem estar no padrão do Worklab.<br>
-        • Não é realizado envio de PDF.<br>
-        • Os resultados são enviados campo à campo.
-    </td>
-</tr>
+    .subtitulo {
+        font-weight: bold;
+        background: #fafafa;
+    }
 
-<tr>
-    <td colspan="2"><strong>Parâmetros Necessários</strong></td>
-</tr>
+    .texto {
+        line-height: 1.6;
+    }
 
-<tr>
-    <td><strong>Parâmetro</strong></td>
-    <td><strong>Descrição</strong></td>
-</tr>
+    .lista {
+        padding-left: 18px;
+        margin: 0;
+    }
 
-<tr>
-    <td>usuarioAghuse</td>
-    <td>Usuário da integração</td>
-</tr>
+    .lista li {
+        margin-bottom: 5px;
+    }
+</style>
 
-<tr>
-    <td>tokenAghuse</td>
-    <td>Token da integração</td>
-</tr>
+<table class="tabela-integracao">
 
-<tr>
-    <td colspan="2"><strong>Estrutura Necessária</strong></td>
-</tr>
+    <tr>
+        <td colspan="2" class="titulo-secao">
+            Integração AGHUse
+        </td>
+    </tr>
 
-<tr>
-    <td colspan="2">
-        • integracao_aghuse<br>
-        • integracao_aghuse_de_para
-    </td>
-</tr>
+    <tr>
+        <td colspan="2" class="subtitulo">
+            Visão Geral
+        </td>
+    </tr>
 
-<tr>
-    <td colspan="2"><strong>Alteração de Campo</strong></td>
-</tr>
+    <tr>
+        <td colspan="2" class="texto">
+            A integração AGHUse é responsável pela importação de pacientes
+            e exportação de resultados. A ativação da integração é feita
+            pelo WorklabGestor.
+        </td>
+    </tr>
 
-<tr>
-    <td><strong>Campo</strong></td>
-    <td><strong>Tipo</strong></td>
-</tr>
+    <tr>
+        <td colspan="2" class="subtitulo">
+            Regras da Integração
+        </td>
+    </tr>
 
-<tr>
-    <td>codigo_aghuse</td>
-    <td>VARCHAR(5) DEFAULT NULL</td>
-</tr>
+    <tr>
+        <td colspan="2">
+            <ul class="lista">
+                <li>O de/para de exames é feito pelo lado do AGHUse.</li>
+                <li>Os códigos enviados devem estar no padrão do Worklab.</li>
+                <li>Não é realizado envio de PDF.</li>
+                <li>Os resultados são enviados campo à campo.</li>
+            </ul>
+        </td>
+    </tr>
 
-<tr>
-    <td colspan="2"><strong>De/Para de Resultados</strong></td>
-</tr>
+    <tr>
+        <td colspan="2" class="subtitulo">
+            Parâmetros Necessários
+        </td>
+    </tr>
 
-<tr>
-    <td colspan="2">
-        É necessário configurar de/para para exames com laudo montado,
-        exames de apoio e exames com resultados compostos.
-    </td>
-</tr>
+    <tr>
+        <td width="35%"><strong>Parâmetro</strong></td>
+        <td><strong>Descrição</strong></td>
+    </tr>
 
-<tr>
-    <td colspan="2"><strong>Observações</strong></td>
-</tr>
+    <tr>
+        <td>usuarioAghuse</td>
+        <td>Usuário da integração</td>
+    </tr>
 
-<tr>
-    <td colspan="2">
-        • Exames compostos devem ser configurados manualmente na tela de de/para.<br>
-        • Caso o código do exame venha diferente do padrão Worklab,
-        a integração não localizará o exame corretamente.
-    </td>
-</tr>
+    <tr>
+        <td>tokenAghuse</td>
+        <td>Token da integração</td>
+    </tr>
+
+    <tr>
+        <td colspan="2" class="subtitulo">
+            Estrutura Necessária
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2">
+            <ul class="lista">
+                <li>integracao_aghuse</li>
+                <li>integracao_aghuse_de_para</li>
+            </ul>
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2" class="subtitulo">
+            Alteração de Campo
+        </td>
+    </tr>
+
+    <tr>
+        <td><strong>Campo</strong></td>
+        <td><strong>Tipo</strong></td>
+    </tr>
+
+    <tr>
+        <td>codigo_aghuse</td>
+        <td>VARCHAR(5) DEFAULT NULL</td>
+    </tr>
+
+    <tr>
+        <td colspan="2" class="subtitulo">
+            De/Para de Resultados
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2" class="texto">
+            É necessário configurar de/para para exames com laudo montado,
+            exames de apoio e exames com resultados compostos.
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2" class="subtitulo">
+            Observações
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2">
+            <ul class="lista">
+                <li>
+                    Exames compostos devem ser configurados manualmente
+                    na tela de de/para.
+                </li>
+
+                <li>
+                    Caso o código do exame venha diferente do padrão Worklab,
+                    a integração não localizará o exame corretamente.
+                </li>
+            </ul>
+        </td>
+    </tr>
+
+</table>
     </main>
 
     <footer>
