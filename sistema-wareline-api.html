@@ -1,14 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Integração - Wareline (API)</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Integração - API Wareline</title>
+
+    <link rel="stylesheet" href="style.css" />
 
     <!-- Favicon -->
-  <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <style>
+
+        .sql-box{
+            background:#f4f4f4;
+            border:1px solid #d7d7d7;
+            border-left:5px solid #005aa9;
+            border-radius:4px;
+            padding:14px;
+            margin-top:8px;
+            margin-bottom:18px;
+            overflow-x:auto;
+        }
+
+        .sql-box pre{
+            margin:0;
+            font-family:Consolas, Monaco, monospace;
+            font-size:13px;
+            line-height:1.5;
+            color:#333;
+        }
+
+        .aghuse-table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:8px;
+            margin-bottom:10px;
+            font-family:Arial, Helvetica, sans-serif;
+            font-size:13px;
+        }
+
+        .aghuse-table td{
+            border:1px solid #bfbfbf;
+            padding:8px 10px;
+        }
+
+        .aghuse-table .head td{
+            background:#efefef;
+            color:#005aa9;
+            font-weight:bold;
+        }
+
+    </style>
+
 </head>
+
 <body>
 
   <div id="conteudo-site">
@@ -28,21 +74,421 @@
 </button>
 </div>
 
-    <header>
-      <h1>Integração - Wareline (API)</h1>
-    </header>
+<header>
+    <h1>Integração - API Wareline</h1>
+</header>
 
-    <main>
-      <p>Aqui está o uso e configuração da integração <strong>Wareline (API)</strong>.</p>
-      <!-- Coloque o conteúdo aqui -->
-    </main>
+<main>
+  <p>Aqui estão as instruções para utilização da integração
+<strong>API Wareline</strong>.</p>
 
-    <footer>
-      <p>© 2025 - by matheusmax__</p>
-    </footer>
+<table style="border-collapse:collapse;width:100%;font-family:Arial,sans-serif;">
+<thead>
+  <tr>
+    <th style="text-align:left;border:none;padding:4px;width:25%;"><h2>Padrão</h2></th>
+    <th style="text-align:left;border:none;padding:4px;width:25%;"><h2>API Wareline</h2></th>
+    <th style="width:15%;"></th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <td><h3>Comunicação</h3></td>
+  <td><h3>API REST</h3></td>
+</tr>
+<tr>
+  <td><h3>Autenticação</h3></td>
+  <td><h3>OAuth2</h3></td>
+</tr>
+<tr>
+  <td><h3>Resultado</h3></td>
+  <td><h3>Envio através da API Wareline</h3></td>
+</tr>
+</tbody>
+</table>
+<br>
 
-  </div>
+<table style="border-collapse:collapse;width:100%;font-family:Arial,sans-serif;">
+  <thead>
+    <tr>
+      <th style="text-align:left;border:none;padding:4px;width:25%;"><h2>Configuração</h2></th>
+    </tr>
+  </thead>
+<tbody>
+  <tr>
+    <td><h3>Ativar integração através do Gestor.</h3></td>
+  </tr>
+  <tr>
+    <td><h3>Acessar o cadastro da integração API Wareline e informar as credenciais fornecidas pelo parceiro.</h3></td>
+  </tr>
+</tbody>
+</table>
+<br>
 
-  <script src="script.js"></script>
+<table style="border-collapse:collapse;width:100%;font-family:Arial,sans-serif;">
+    <thead>
+        <tr>
+            <th style="text-align:left;border:none;padding:4px;width:25%;"><h2>Banco de Dados</h2></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><h3>Executar os scripts SQL fornecidos para criar as tabelas necessárias.</h3></td>
+        </tr>
+    </tbody>
+<thead>
+  <tr>
+    <th style="text-align:left;border:none;padding:4px;"><h2>Banco de Dados</h2></th>
+  </tr>
+</thead>
+</table>
+
+<h3>Criar as seguintes estruturas no banco de dados:</h3>
+<br>
+<h2>CREATE TABLE integracao_wareline</h2>
+
+<div class="sql-box">
+  <pre>CREATE TABLE integracao_wareline (
+
+id_wareline int(11) PRIMARY KEY AUTO_INCREMENT,
+id_paciente int(11),
+codficha VARCHAR(20),
+data_requisicao datetime not null,
+data_cadastro datetime not null,
+requisicao int(11),
+atendimento int(11),
+prontuario int(11),
+accession_number VARCHAR(20),
+exames VARCHAR(200),
+item int(11),
+laboratorio VARCHAR(10),
+status VARCHAR(3),
+processado int(1) DEFAULT 0,
+enviado int(1) DEFAULT 0
+
+);</pre>
+</div>
+<br>
+<h2>CREATE TABLE wareline_credentials</h2>
+<div class="sql-box">
+<pre>
+CREATE TABLE wareline_credentials (
+
+credential_id int(11) PRIMARY KEY AUTO_INCREMENT,
+sigla_cliente int(11) NOT NULL,
+username varchar(30),
+password varchar(30),
+grant_type varchar(30),
+client_id varchar(30),
+client_secret varchar(60),
+token text,
+expires_token datetime,
+refresh_token text,
+expires_refresh_token datetime,
+updated_at datetime
+
+);</pre>
+</div>
+<br>
+
+<h2>ALTER TABLE locais</h2>
+<div class="sql-box">
+<pre>
+ALTER TABLE locais
+ADD COLUMN local_wareline VARCHAR(50);
+</pre>
+</div>
+<br>
+
+<div class="sql-box">
+<pre>
+ALTER TABLE locais
+ADD COLUMN unidade_wareline VARCHAR(50);
+</pre>
+</div>
+<br>
+<h2>ALTER TABLE convenio</h2>
+
+<div class="sql-box">
+<pre>
+ALTER TABLE convenio
+ADD COLUMN convenio_wareline VARCHAR(20);
+</pre>
+</div>
+
+<h2>CREATE TABLE exames_webservice</h2>
+
+<div class="sql-box">
+
+<pre>
+CREATE TABLE exames_webservice (
+
+id SMALLINT(6) NOT NULL AUTO_INCREMENT,
+id_exame SMALLINT(6) NOT NULL,
+exame_apoio VARCHAR(20) NOT NULL,
+created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+destino_webservice VARCHAR(30) DEFAULT NULL,
+
+PRIMARY KEY (id)
+
+);
+</pre>
+
+</div>
+
+<br>
+
+<table style="border-collapse:collapse;width:100%;font-family:Arial,sans-serif;">
+
+    <thead>
+
+        <tr>
+
+            <th style="text-align:left;border:none;padding:4px;">
+
+                <h2>Configuração Gestor</h2>
+
+            </th>
+
+        </tr>
+
+    </thead>
+
+</table>
+
+<h3>
+
+Após ativar a integração no Gestor, acessar a tela
+<b>integracaoWareline.php</b> e preencher as credenciais
+fornecidas pelo Wareline.
+
+</h3>
+
+<br>
+
+<table class="aghuse-table">
+
+    <tr class="head">
+
+        <td width="35%">Parâmetro</td>
+        <td>Descrição</td>
+
+    </tr>
+
+    <tr>
+
+        <td>username</td>
+        <td>Usuário fornecido pelo Wareline.</td>
+
+    </tr>
+
+    <tr>
+
+        <td>password</td>
+        <td>Senha fornecida pelo Wareline.</td>
+
+    </tr>
+
+    <tr>
+
+        <td>grant_type</td>
+        <td>Tipo de autenticação utilizado pela API.</td>
+
+    </tr>
+
+    <tr>
+
+        <td>client_id</td>
+        <td>Identificador do cliente.</td>
+
+    </tr>
+
+    <tr>
+
+        <td>client_secret</td>
+        <td>Chave secreta fornecida pelo Wareline.</td>
+
+    </tr>
+
+</table>
+
+<br>
+
+<table style="border-collapse:collapse;width:100%;font-family:Arial,sans-serif;">
+
+    <thead>
+
+        <tr>
+
+            <th style="text-align:left;border:none;padding:4px;">
+
+                <h2>Cadastro de/Para</h2>
+
+            </th>
+
+        </tr>
+
+    </thead>
+
+</table>
+
+<ul>
+
+    <li>
+        No menu <b>Integrações → Configuração → De/Para Exames</b>,
+        cadastrar todos os exames que serão utilizados pela integração.
+    </li>
+
+    <br>
+
+    <li>
+        No cadastro de <b>Unidades e Locais</b>, preencher o campo
+        <b>Unidade Wareline</b>.
+    </li>
+
+    <br>
+
+    <li>
+        No cadastro de <b>Convênios</b>, preencher o campo
+        <b>Código Wareline</b>, utilizado para identificação dos convênios.
+    </li>
+
+</ul>
+<br>
+
+<table style="border-collapse:collapse;width:100%;font-family:Arial,sans-serif;">
+
+    <thead>
+
+        <tr>
+
+            <th style="text-align:left;border:none;padding:4px;">
+
+                <h2>Observações</h2>
+
+            </th>
+
+        </tr>
+
+    </thead>
+
+</table>
+
+<ul>
+
+    <li>
+        As credenciais (<strong>username</strong>, <strong>password</strong>,
+        <strong>grant_type</strong>, <strong>client_id</strong> e
+        <strong>client_secret</strong>) devem ser fornecidas pelo Wareline.
+    </li>
+
+    <br>
+
+    <li>
+        O cadastro do <strong>De/Para</strong> é obrigatório para que os exames
+        sejam identificados corretamente durante a integração.
+    </li>
+
+    <br>
+
+    <li>
+        Os campos <strong>Unidade Wareline</strong> e
+        <strong>Código Wareline</strong> devem ser preenchidos conforme os
+        códigos utilizados pelo parceiro.
+    </li>
+
+    <br>
+
+    <li>
+        Após concluir toda a configuração, recomenda-se realizar um pedido de
+        teste para validar a comunicação entre os sistemas.
+    </li>
+
+</ul>
+
+<br>
+
+<table style="border-collapse:collapse;width:100%;font-family:Arial,sans-serif;">
+
+    <thead>
+
+        <tr>
+
+            <th style="text-align:left;border:none;padding:4px;">
+
+                <h2>Fluxo da Integração</h2>
+
+            </th>
+
+        </tr>
+
+    </thead>
+
+</table>
+
+<table class="aghuse-table">
+
+    <tr class="head">
+
+        <td width="30%">Etapa</td>
+        <td>Descrição</td>
+
+    </tr>
+
+    <tr>
+
+        <td>1</td>
+        <td>Ativar a integração pelo Gestor.</td>
+
+    </tr>
+
+    <tr>
+
+        <td>2</td>
+        <td>Executar os scripts de banco de dados.</td>
+
+    </tr>
+
+    <tr>
+
+        <td>3</td>
+        <td>Informar as credenciais da API Wareline.</td>
+
+    </tr>
+
+    <tr>
+
+        <td>4</td>
+        <td>Configurar o De/Para dos exames.</td>
+
+    </tr>
+
+    <tr>
+
+        <td>5</td>
+        <td>Configurar Unidade Wareline e Código Wareline dos convênios.</td>
+
+    </tr>
+
+    <tr>
+
+        <td>6</td>
+        <td>Realizar testes de envio e recebimento.</td>
+
+    </tr>
+
+</table>
+
+</main>
+
+<footer>
+
+    <p>© 2025 - by matheusmax__</p>
+
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
